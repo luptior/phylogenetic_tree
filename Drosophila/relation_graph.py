@@ -2,8 +2,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import sys
 
-
-
 def main(files):
     for file in files:
         data = np.loadtxt(file)
@@ -16,12 +14,6 @@ def main(files):
             name_list.append(row[0])
             dist_table[i][:]=row[1:]
             i+=1
-
-
-
-
-
-
 
 
 if __name__ == "__main__":
