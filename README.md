@@ -1,3 +1,3 @@
 # phylogenetic_tree
 
-Project files moved to institution's Gitlab
+Project is moved to institution's Gitlab.

@@ -6,12 +6,13 @@ import numpy as np
 # mode 1 return name in form specie1:specie2, mode 2 return name1 and name2 separately
 def name_parse(name, mode):
     # index for the second dash
+    # for this to work, file name should be in name1__name2 format
     if mode == 2:
-        return name.split("_")[1], name.split("_")[2]
+        return name.split("__")[1], name.split("__")[2]
     elif mode == 1:
-        return "%s:%s" % (name.split("_")[1], name.split("_")[2])
+        return "%s:%s" % (name.split("__")[1], name.split("__")[2])
     else:
-        sys.exit("wrong mode")
+        print("wrong mode")
 
 
 # take input of distance table and a row list with name inside corresponds to the row and column
@@ -59,6 +60,12 @@ def sumdist(filename, mode):
     elif mode == "-counts":
         # mode read the kmer conuts
         return line[1]
+
+# take a file and sum distance inside
+def sumdist_original(filename):
+    # sum = os.popen("awk '{sum += 1} END {print sum}' " + filename).read().strip()
+    sum=pysbatch.run_cmd(['wc', '-l', filename]).strip("/n")
+    return int(sum)
 
 
 def main():
