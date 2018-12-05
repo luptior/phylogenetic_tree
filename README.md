@@ -1,3 +1,7 @@
-# phylogenetic_tree
+Current functions:
 
-Project is moved to institution's Gitlab.
+distance_table.py:
+    generate diatance table based on the distance result produced by kmc
+
+Drosophila/derivative.py:
+    read and generate derivative of histogram curve
